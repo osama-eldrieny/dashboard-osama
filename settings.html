@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProjectHub - Settings</title>
+  <link rel="icon" href="https://uimarkets.com/images/pointer/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://uimarkets.com/images/pointer/assets/images/pointer-icon-favicon.png">
+  <link rel="apple-touch-icon" href="https://uimarkets.com/images/pointer/assets/images/pointer-icon-favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    window.POINTER_CONFIG = {
+      project:     "my-site",  // ← a name for this app's feedback
+      environment: "local",     // optional: local / staging / prod / ...
+      enabled:     true,       // optional: set false to keep the snippet but show nothing (e.g. in production)
+      // server is optional — it defaults to the origin of the pointer.js script below.
+      // Only set it here if you load pointer.js from a different origin than your Pointer server.
+    };
+  </script>
+  <script src="http://localhost:3001/pointer.js" defer></script>
+
+
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+  <div class="flex h-screen">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white border-r border-slate-200 flex flex-col">
+      <div class="px-6 py-6 border-b border-slate-200">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-white" data-lucide="layout-dashboard" stroke="currentColor" stroke-width="2" fill="none"></svg>
+          </div>
+          <span class="font-bold text-lg">ProjectHub</span>
+        </div>
+      </div>
+
+      <nav class="flex-1 px-4 py-6 space-y-2">
+        <a href="dashboard.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-md text-slate-900 font-medium text-base hover:bg-slate-100 transition-colors">
+          <svg class="w-5 h-5" data-lucide="layout-dashboard" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></svg>
+          Dashboard
+        </a>
+        <a href="tasks.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-md text-slate-900 font-medium text-base hover:bg-slate-100 transition-colors">
+          <svg class="w-5 h-5" data-lucide="check-square" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></svg>
+          Tasks
+        </a>
+        <a href="team.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-md text-slate-900 font-medium text-base hover:bg-slate-100 transition-colors">
+          <svg class="w-5 h-5" data-lucide="users" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></svg>
+          Team
+        </a>
+        <a href="settings.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-md bg-blue-50 text-blue-700 font-semibold text-base hover:bg-blue-100 transition-colors">
+          <svg class="w-5 h-5" data-lucide="settings" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></svg>
+          Settings
+        </a>
+        <a href="analytics.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-md text-slate-900 font-medium text-base hover:bg-slate-100 transition-colors">
+          <svg class="w-5 h-5" data-lucide="bar-chart-3" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></svg>
+          Analytics
+        </a>
+      </nav>
+
+      <div class="px-4 py-4 border-t border-slate-200">
+        <div class="flex items-center gap-3 p-3 rounded-md hover:bg-slate-100 cursor-pointer transition-colors">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop" alt="John Doe" class="w-10 h-10 rounded-full object-cover">
+          <div class="flex-1 min-w-0">
+            <p class="font-semibold text-sm truncate text-slate-900">John Doe</p>
+            <p class="text-xs text-slate-600 truncate">john@example.com</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 overflow-auto">
+      <!-- Header -->
+      <header class="bg-white border-b border-slate-200 sticky top-0 z-10">
+        <div class="px-8 py-6 flex items-center justify-between">
+          <div>
+            <div class="flex items-center gap-3">
+              <svg class="w-10 h-10 text-blue-600" data-lucide="settings" stroke="currentColor" stroke-width="2" fill="none"></svg>
+              <h1 class="text-4xl font-bold">Settings</h1>
+            </div>
+            <p class="text-slate-600 text-base mt-1">Manage your account and workspace settings.</p>
+          </div>
+          <div class="flex items-center gap-4">
+            <input type="text" placeholder="Search settings..." class="input w-64" style="display: none;">
+            <button class="btn btn-secondary" style="display: none;">
+              <svg class="w-5 h-5" data-lucide="search" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></svg>
+            </button>
+            <div class="dropdown">
+              <button class="btn btn-secondary" onclick="this.nextElementSibling.classList.toggle('show')">
+                <svg class="w-5 h-5" data-lucide="bell" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></svg>
+              </button>
+              <div class="dropdown-content">
+                <div class="dropdown-content-header">Notifications</div>
+                <div class="dropdown-divider"></div>
+                <button class="dropdown-item">
+                  <svg class="w-4 h-4" data-lucide="check-circle" stroke="currentColor" stroke-width="2" fill="none"></svg>
+                  Settings saved
+                </button>
+                <div class="dropdown-divider"></div>
+                <button class="dropdown-item dropdown-item-action">
+                  View all notifications
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content with Settings Layout -->
+      <div class="p-8">
+        <div class="settings-layout">
+          <!-- Settings Sidebar -->
+          <div class="settings-sidebar">
+            <button class="settings-nav-item active" data-section="profile">
+              <svg class="w-4 h-4" data-lucide="user" stroke="currentColor" stroke-width="2" fill="none"></svg>
+              Profile
+            </button>
+            <button class="settings-nav-item" data-section="workspace">
+              <svg class="w-4 h-4" data-lucide="briefcase" stroke="currentColor" stroke-width="2" fill="none"></svg>
+              Workspace
+            </button>
+            <button class="settings-nav-item" data-section="notifications">
+              <svg class="w-4 h-4" data-lucide="bell" stroke="currentColor" stroke-width="2" fill="none"></svg>
+              Notifications
+            </button>
+            <button class="settings-nav-item" data-section="security">
+              <svg class="w-4 h-4" data-lucide="lock" stroke="currentColor" stroke-width="2" fill="none"></svg>
+              Security
+            </button>
+            <button class="settings-nav-item" data-section="integrations">
+              <svg class="w-4 h-4" data-lucide="zap" stroke="currentColor" stroke-width="2" fill="none"></svg>
+              Integrations
+            </button>
+            <button class="settings-nav-item" data-section="billing">
+              <svg class="w-4 h-4" data-lucide="credit-card" stroke="currentColor" stroke-width="2" fill="none"></svg>
+              Billing
+            </button>
+          </div>
+
+          <!-- Settings Content -->
+          <div class="settings-content">
+            <!-- Profile Section -->
+            <div class="settings-section" id="profile-section">
+              <div class="mb-8">
+                <h2 class="text-2xl font-bold mb-6">Profile Settings</h2>
+
+                <div class="card">
+                  <div class="card-content">
+                    <div class="flex flex-col gap-8">
+                      <!-- Profile Picture Section -->
+                      <div class="flex flex-col items-start gap-4">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop" alt="Avatar" class="w-24 h-24 rounded-lg object-cover">
+                        <h3 class="font-semibold text-slate-900 text-lg">John Doe</h3>
+                      </div>
+
+                      <!-- Profile Form Section -->
+                      <div class="flex flex-col gap-5">
+                        <h3 class="font-semibold text-slate-900 text-lg">Personal Information</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                          <div class="flex flex-col gap-5">
+                            <div class="form-group">
+                              <label class="form-label">Full Name</label>
+                              <input type="text" class="input" value="John Doe">
+                            </div>
+                            <div class="form-group">
+                              <label class="form-label">Email Address</label>
+                              <input type="email" class="input" value="john@example.com">
+                            </div>
+                            <div class="form-group">
+                              <label class="form-label">Location</label>
+                              <input type="text" class="input" placeholder="San Francisco, CA">
+                            </div>
+                          </div>
+                          <div class="form-group md:row-span-3">
+                            <label class="form-label">Bio</label>
+                            <textarea class="input h-full" rows="5" placeholder="Tell us about yourself..." style="max-height: 222px;">Product-minded developer passionate about building great experiences</textarea>
+                          </div>
+                        </div>
+                        <div class="flex gap-3 justify-end pt-4">
+                          <button class="btn btn-secondary">Cancel</button>
+                          <button class="btn btn-primary">Save Changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Workspace Section -->
+            <div class="settings-section" id="workspace-section" style="display: none;">
+              <h2 class="text-2xl font-bold mb-6">Workspace Settings</h2>
+              <div class="card">
+                <div class="card-content">
+                  <div class="form-group">
+                    <label class="form-label">Workspace Name</label>
+                    <input type="text" class="input" value="My Awesome Workspace">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Description</label>
+                    <textarea class="input" rows="4" placeholder="Describe your workspace...">A collaborative space for building amazing products</textarea>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Default Time Zone</label>
+                    <select class="input">
+                      <option>UTC (Coordinated Universal Time)</option>
+                      <option>PST (Pacific Standard Time)</option>
+                      <option>EST (Eastern Standard Time)</option>
+                      <option>GMT (Greenwich Mean Time)</option>
+                    </select>
+                  </div>
+                  <div class="flex gap-3 justify-end">
+                    <button class="btn btn-secondary">Cancel</button>
+                    <button class="btn btn-primary">Save Changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Notifications Section -->
+            <div class="settings-section" id="notifications-section" style="display: none;">
+              <h2 class="text-2xl font-bold mb-6">Notification Preferences</h2>
+              <div class="card">
+                <div class="card-content space-y-6">
+                  <div class="flex items-center justify-between p-4 bg-slate-50 rounded-lg">
+                    <div>
+                      <p class="font-semibold">Task Assigned</p>
+                      <p class="text-sm text-slate-600">Get notified when a task is assigned to you</p>
+                    </div>
+                    <button class="toggle-switch active"></button>
+                  </div>
+
+                  <div class="flex items-center justify-between p-4 bg-slate-50 rounded-lg">
+                    <div>
+                      <p class="font-semibold">Task Comments</p>
+                      <p class="text-sm text-slate-600">Get notified on new comments in your tasks</p>
+                    </div>
+                    <button class="toggle-switch active"></button>
+                  </div>
+
+                  <div class="flex items-center justify-between p-4 bg-slate-50 rounded-lg">
+                    <div>
+                      <p class="font-semibold">Task Due Soon</p>
+                      <p class="text-sm text-slate-600">Get reminders when tasks are due soon</p>
+                    </div>
+                    <button class="toggle-switch"></button>
+                  </div>
+
+                  <div class="flex items-center justify-between p-4 bg-slate-50 rounded-lg">
+                    <div>
+                      <p class="font-semibold">Team Updates</p>
+                      <p class="text-sm text-slate-600">Get notified of team activity and updates</p>
+                    </div>
+                    <button class="toggle-switch active"></button>
+                  </div>
+
+                  <div class="flex gap-3 justify-end pt-4 border-t border-slate-200">
+                    <button class="btn btn-secondary">Cancel</button>
+                    <button class="btn btn-primary">Save Preferences</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Security Section -->
+            <div class="settings-section" id="security-section" style="display: none;">
+              <h2 class="text-2xl font-bold mb-6">Security Settings</h2>
+
+              <div class="card mb-6">
+                <div class="card-header">
+                  <h3 class="card-title">Change Password</h3>
+                </div>
+                <div class="card-content">
+                  <div class="form-group">
+                    <label class="form-label">Current Password</label>
+                    <input type="password" class="input" placeholder="Enter current password">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">New Password</label>
+                    <input type="password" class="input" placeholder="Enter new password">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Confirm Password</label>
+                    <input type="password" class="input" placeholder="Confirm new password">
+                  </div>
+                  <div class="flex gap-3 justify-end">
+                    <button class="btn btn-secondary">Cancel</button>
+                    <button class="btn btn-primary">Update Password</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">Two-Factor Authentication</h3>
+                </div>
+                <div class="card-content">
+                  <p class="text-slate-600 mb-4">Add an extra layer of security to your account</p>
+                  <button class="btn btn-primary">
+                    <svg class="w-4 h-4" data-lucide="shield" stroke="currentColor" stroke-width="2" fill="none"></svg>
+                    Enable 2FA
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Integrations Section -->
+            <div class="settings-section" id="integrations-section" style="display: none;">
+              <h2 class="text-2xl font-bold mb-6">Connected Integrations</h2>
+              <div class="space-y-4">
+                <div class="integration-card">
+                  <div class="integration-info">
+                    <div class="integration-icon">
+                      <svg class="w-6 h-6 text-blue-600" data-lucide="github" stroke="currentColor" stroke-width="2" fill="none"></svg>
+                    </div>
+                    <div>
+                      <p class="integration-name">GitHub</p>
+                      <p class="integration-status">Connected • john-doe</p>
+                    </div>
+                  </div>
+                  <button class="btn btn-secondary btn-sm">Disconnect</button>
+                </div>
+
+                <div class="integration-card">
+                  <div class="integration-info">
+                    <div class="integration-icon">
+                      <svg class="w-6 h-6 text-blue-600" data-lucide="slack" stroke="currentColor" stroke-width="2" fill="none"></svg>
+                    </div>
+                    <div>
+                      <p class="integration-name">Slack</p>
+                      <p class="integration-status">Not connected</p>
+                    </div>
+                  </div>
+                  <button class="btn btn-primary btn-sm">Connect</button>
+                </div>
+
+                <div class="integration-card">
+                  <div class="integration-info">
+                    <div class="integration-icon">
+                      <svg class="w-6 h-6 text-red-600" data-lucide="google" stroke="currentColor" stroke-width="2" fill="none"></svg>
+                    </div>
+                    <div>
+                      <p class="integration-name">Google Drive</p>
+                      <p class="integration-status">Connected • john.doe@gmail.com</p>
+                    </div>
+                  </div>
+                  <button class="btn btn-secondary btn-sm">Disconnect</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Billing Section -->
+            <div class="settings-section" id="billing-section" style="display: none;">
+              <h2 class="text-2xl font-bold mb-6">Billing & Plan</h2>
+
+              <div class="card mb-6">
+                <div class="card-content">
+                  <div class="flex items-start justify-between">
+                    <div>
+                      <p class="text-sm text-slate-600">Current Plan</p>
+                      <h3 class="text-2xl font-bold mt-2">Professional</h3>
+                      <p class="text-slate-600 mt-2">$29 per month</p>
+                      <p class="text-sm text-slate-600 mt-3">• Unlimited projects • Team collaboration • Advanced analytics • Priority support</p>
+                    </div>
+                    <button class="btn btn-primary">Upgrade Plan</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">Billing History</h3>
+                </div>
+                <div class="card-content">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Invoice</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Jun 27, 2026</td>
+                        <td>Professional Plan - Monthly</td>
+                        <td>$29.00</td>
+                        <td><a href="#" class="text-blue-600 hover:underline">Download</a></td>
+                      </tr>
+                      <tr>
+                        <td>May 27, 2026</td>
+                        <td>Professional Plan - Monthly</td>
+                        <td>$29.00</td>
+                        <td><a href="#" class="text-blue-600 hover:underline">Download</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    document.addEventListener('click', function(event) {
+      if (!event.target.closest('.dropdown')) {
+        document.querySelectorAll('.dropdown-content.show').forEach(el => {
+          el.classList.remove('show');
+        });
+      }
+    });
+
+    // Settings navigation
+    const settingsNavItems = document.querySelectorAll('.settings-nav-item');
+    const settingsSections = document.querySelectorAll('.settings-section');
+
+    settingsNavItems.forEach(item => {
+      item.addEventListener('click', function() {
+        const section = this.getAttribute('data-section');
+
+        settingsNavItems.forEach(i => i.classList.remove('active'));
+        this.classList.add('active');
+
+        settingsSections.forEach(s => s.style.display = 'none');
+        document.getElementById(section + '-section').style.display = 'block';
+      });
+    });
+
+    // Toggle switches
+    const toggleSwitches = document.querySelectorAll('.toggle-switch');
+    toggleSwitches.forEach(toggle => {
+      toggle.addEventListener('click', function() {
+        this.classList.toggle('active');
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const currentPage = window.location.pathname.split('/').pop() || 'settings.html';
+      document.querySelectorAll('a.nav-link').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage) {
+          link.classList.add('bg-blue-50', 'text-blue-700');
+          link.classList.remove('text-slate-900');
+        }
+      });
+    });
+  </script>
+  <pointer-feedback></pointer-feedback>
+</body>
+</html>

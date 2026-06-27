@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProjectHub - Team</title>
+  <link rel="icon" href="https://uimarkets.com/images/pointer/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://uimarkets.com/images/pointer/assets/images/pointer-icon-favicon.png">
+  <link rel="apple-touch-icon" href="https://uimarkets.com/images/pointer/assets/images/pointer-icon-favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    window.POINTER_CONFIG = {
+      project:     "my-site",  // ← a name for this app's feedback
+      environment: "local",     // optional: local / staging / prod / ...
+      enabled:     true,       // optional: set false to keep the snippet but show nothing (e.g. in production)
+      // server is optional — it defaults to the origin of the pointer.js script below.
+      // Only set it here if you load pointer.js from a different origin than your Pointer server.
+    };
+  </script>
+  <script src="https://http://localhost:3001/pointer.js" defer></script>
+
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+  <div class="flex h-screen">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white border-r border-slate-200 flex flex-col">
+      <div class="px-6 py-6 border-b border-slate-200">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-white" data-lucide="layout-dashboard" stroke="currentColor" stroke-width="2" fill="none"></svg>
+          </div>
+          <span class="font-bold text-lg">ProjectHub</span>
+        </div>
+      </div>
+
+      <nav class="flex-1 px-4 py-6 space-y-2">
+        <a href="dashboard.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-md text-slate-900 font-medium text-base hover:bg-slate-100 transition-colors">
+          <svg class="w-5 h-5" data-lucide="layout-dashboard" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></svg>
+          Dashboard
+        </a>
+        <a href="tasks.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-md text-slate-900 font-medium text-base hover:bg-slate-100 transition-colors">
+          <svg class="w-5 h-5" data-lucide="check-square" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></svg>
+          Tasks
+        </a>
+        <a href="team.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-md bg-blue-50 text-blue-700 font-semibold text-base hover:bg-blue-100 transition-colors">
+          <svg class="w-5 h-5" data-lucide="users" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></svg>
+          Team
+        </a>
+        <a href="settings.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-md text-slate-900 font-medium text-base hover:bg-slate-100 transition-colors">
+          <svg class="w-5 h-5" data-lucide="settings" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></svg>
+          Settings
+        </a>
+        <a href="analytics.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-md text-slate-900 font-medium text-base hover:bg-slate-100 transition-colors">
+          <svg class="w-5 h-5" data-lucide="bar-chart-3" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></svg>
+          Analytics
+        </a>
+      </nav>
+
+      <div class="px-4 py-4 border-t border-slate-200">
+        <div class="flex items-center gap-3 p-3 rounded-md hover:bg-slate-100 cursor-pointer transition-colors">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop" alt="John Doe" class="w-10 h-10 rounded-full object-cover">
+          <div class="flex-1 min-w-0">
+            <p class="font-semibold text-sm truncate text-slate-900">John Doe</p>
+            <p class="text-xs text-slate-600 truncate">john@example.com</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 overflow-auto">
+      <!-- Header -->
+      <header class="bg-white border-b border-slate-200 sticky top-0 z-10">
+        <div class="px-8 py-6 flex items-center justify-between">
+          <div>
+            <div class="flex items-center gap-3">
+              <svg class="w-10 h-10 text-blue-600" data-lucide="users" stroke="currentColor" stroke-width="2" fill="none"></svg>
+              <h1 class="text-4xl font-bold">Team</h1>
+            </div>
+            <p class="text-slate-600 text-base mt-1">Manage team members and collaboration.</p>
+          </div>
+          <div class="flex items-center gap-4">
+            <input type="text" placeholder="Search team..." class="input w-64">
+            <button class="btn btn-secondary">
+              <svg class="w-5 h-5" data-lucide="search" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></svg>
+            </button>
+            <div class="dropdown">
+              <button class="btn btn-secondary" onclick="this.nextElementSibling.classList.toggle('show')">
+                <svg class="w-5 h-5" data-lucide="bell" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></svg>
+              </button>
+              <div class="dropdown-content">
+                <div class="dropdown-content-header">Notifications</div>
+                <div class="dropdown-divider"></div>
+                <button class="dropdown-item">
+                  <svg class="w-4 h-4" data-lucide="user-plus" stroke="currentColor" stroke-width="2" fill="none"></svg>
+                  New team member joined
+                </button>
+                <button class="dropdown-item">
+                  <svg class="w-4 h-4" data-lucide="message-square" stroke="currentColor" stroke-width="2" fill="none"></svg>
+                  Team invitation sent
+                </button>
+                <div class="dropdown-divider"></div>
+                <button class="dropdown-item dropdown-item-action">
+                  View all notifications
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <div class="p-8">
+        <!-- Team Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+          <div class="card">
+            <div class="card-content">
+              <p class="text-slate-700 text-base font-semibold">Total Members</p>
+              <p class="text-4xl font-bold mt-3 text-slate-900">24</p>
+              <p class="text-slate-600 text-base mt-3">+3 this month</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <p class="text-slate-700 text-base font-semibold">Online Now</p>
+              <p class="text-4xl font-bold mt-3 text-green-600">18</p>
+              <p class="text-slate-600 text-base mt-3">75% availability</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <p class="text-slate-700 text-base font-semibold">Teams</p>
+              <p class="text-4xl font-bold mt-3 text-slate-900">5</p>
+              <p class="text-slate-600 text-base mt-3">Engineering, Design...</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <p class="text-slate-700 text-base font-semibold">Active Projects</p>
+              <p class="text-4xl font-bold mt-3 text-slate-900">12</p>
+              <p class="text-slate-600 text-base mt-3">All teams involved</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Members Table -->
+        <div class="card">
+          <div class="card-header flex items-center justify-between">
+            <h2 class="card-title">Team Members Directory</h2>
+            <button class="btn btn-primary btn-sm" onclick="document.getElementById('invite-modal').classList.add('show')">
+              <svg class="w-4 h-4" data-lucide="user-plus" stroke="currentColor" stroke-width="2" fill="none"></svg>
+              Invite Member
+            </button>
+          </div>
+          <div class="card-content">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Role</th>
+                  <th>Status</th>
+                  <th>Tasks</th>
+                  <th>Joined</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="flex items-center gap-3">
+                      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop" alt="John Doe" class="w-10 h-10 rounded-full object-cover">
+                      <div>
+                        <p class="font-semibold">John Doe</p>
+                        <p class="text-xs text-slate-500">john@example.com</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Project Lead</td>
+                  <td><span class="status-dot online"></span>Online</td>
+                  <td><span class="badge badge-primary">12 tasks</span></td>
+                  <td>Jan 15, 2026</td>
+                  <td>
+                    <button class="btn btn-ghost btn-xs">
+                      <svg class="w-4 h-4" data-lucide="more-horizontal" stroke="currentColor" stroke-width="2" fill="none"></svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="flex items-center gap-3">
+                      <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop" alt="Alice Roberts" class="w-10 h-10 rounded-full object-cover">
+                      <div>
+                        <p class="font-semibold">Alice Roberts</p>
+                        <p class="text-xs text-slate-500">alice@example.com</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Designer</td>
+                  <td><span class="status-dot away"></span>Away</td>
+                  <td><span class="badge badge-secondary">8 tasks</span></td>
+                  <td>Feb 20, 2026</td>
+                  <td>
+                    <button class="btn btn-ghost btn-xs">
+                      <svg class="w-4 h-4" data-lucide="more-horizontal" stroke="currentColor" stroke-width="2" fill="none"></svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="flex items-center gap-3">
+                      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=40&h=40&fit=crop" alt="Sarah Miller" class="w-10 h-10 rounded-full object-cover">
+                      <div>
+                        <p class="font-semibold">Sarah Miller</p>
+                        <p class="text-xs text-slate-500">sarah@example.com</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Developer</td>
+                  <td><span class="status-dot online"></span>Online</td>
+                  <td><span class="badge badge-success">15 tasks</span></td>
+                  <td>Mar 10, 2026</td>
+                  <td>
+                    <button class="btn btn-ghost btn-xs">
+                      <svg class="w-4 h-4" data-lucide="more-horizontal" stroke="currentColor" stroke-width="2" fill="none"></svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="flex items-center gap-3">
+                      <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=40&h=40&fit=crop" alt="Robert Kim" class="w-10 h-10 rounded-full object-cover">
+                      <div>
+                        <p class="font-semibold">Robert Kim</p>
+                        <p class="text-xs text-slate-500">robert@example.com</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Developer</td>
+                  <td><span class="status-dot offline"></span>Offline</td>
+                  <td><span class="badge badge-secondary">10 tasks</span></td>
+                  <td>Apr 5, 2026</td>
+                  <td>
+                    <button class="btn btn-ghost btn-xs">
+                      <svg class="w-4 h-4" data-lucide="more-horizontal" stroke="currentColor" stroke-width="2" fill="none"></svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="flex items-center gap-3">
+                      <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=40&h=40&fit=crop" alt="Emma Wilson" class="w-10 h-10 rounded-full object-cover">
+                      <div>
+                        <p class="font-semibold">Emma Wilson</p>
+                        <p class="text-xs text-slate-500">emma@example.com</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Frontend Developer</td>
+                  <td><span class="status-dot online"></span>Online</td>
+                  <td><span class="badge badge-success">18 tasks</span></td>
+                  <td>May 12, 2026</td>
+                  <td>
+                    <button class="btn btn-ghost btn-xs">
+                      <svg class="w-4 h-4" data-lucide="more-horizontal" stroke="currentColor" stroke-width="2" fill="none"></svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="flex items-center gap-3">
+                      <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?w=40&h=40&fit=crop" alt="Lisa Chen" class="w-10 h-10 rounded-full object-cover">
+                      <div>
+                        <p class="font-semibold">Lisa Chen</p>
+                        <p class="text-xs text-slate-500">lisa@example.com</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Product Designer</td>
+                  <td><span class="status-dot away"></span>Away</td>
+                  <td><span class="badge badge-secondary">7 tasks</span></td>
+                  <td>May 28, 2026</td>
+                  <td>
+                    <button class="btn btn-ghost btn-xs">
+                      <svg class="w-4 h-4" data-lucide="more-horizontal" stroke="currentColor" stroke-width="2" fill="none"></svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="flex items-center gap-3">
+                      <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=40&h=40&fit=crop" alt="Michael Lee" class="w-10 h-10 rounded-full object-cover">
+                      <div>
+                        <p class="font-semibold">Michael Lee</p>
+                        <p class="text-xs text-slate-500">michael@example.com</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>DevOps Engineer</td>
+                  <td><span class="status-dot online"></span>Online</td>
+                  <td><span class="badge badge-primary">11 tasks</span></td>
+                  <td>Jun 3, 2026</td>
+                  <td>
+                    <button class="btn btn-ghost btn-xs">
+                      <svg class="w-4 h-4" data-lucide="more-horizontal" stroke="currentColor" stroke-width="2" fill="none"></svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="flex items-center gap-3">
+                      <img src="https://images.unsplash.com/photo-1695927621677-ec96e048dce2?w=40&h=40&fit=crop" alt="Nicole Brown" class="w-10 h-10 rounded-full object-cover">
+                      <div>
+                        <p class="font-semibold">Nicole Brown</p>
+                        <p class="text-xs text-slate-500">nicole@example.com</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Marketing Manager</td>
+                  <td><span class="status-dot online"></span>Online</td>
+                  <td><span class="badge badge-success">16 tasks</span></td>
+                  <td>Jun 10, 2026</td>
+                  <td>
+                    <button class="btn btn-ghost btn-xs">
+                      <svg class="w-4 h-4" data-lucide="more-horizontal" stroke="currentColor" stroke-width="2" fill="none"></svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="flex items-center gap-3">
+                      <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=40&h=40&fit=crop" alt="James Rodriguez" class="w-10 h-10 rounded-full object-cover">
+                      <div>
+                        <p class="font-semibold">James Rodriguez</p>
+                        <p class="text-xs text-slate-500">james@example.com</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>QA Engineer</td>
+                  <td><span class="status-dot offline"></span>Offline</td>
+                  <td><span class="badge badge-secondary">9 tasks</span></td>
+                  <td>Jun 15, 2026</td>
+                  <td>
+                    <button class="btn btn-ghost btn-xs">
+                      <svg class="w-4 h-4" data-lucide="more-horizontal" stroke="currentColor" stroke-width="2" fill="none"></svg>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Team Groups Section -->
+        <h2 class="text-2xl font-bold mt-12 mb-6">Teams & Departments</h2>
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+          <div class="card">
+            <div class="card-content">
+              <div class="flex items-start justify-between mb-4">
+                <div>
+                  <h3 class="font-semibold text-lg text-slate-900">Engineering</h3>
+                  <p class="text-sm text-slate-600 mt-1">Backend & Frontend</p>
+                </div>
+                <span class="badge badge-primary">8 members</span>
+              </div>
+              <div class="flex -space-x-2 mt-4">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop" alt="" class="w-8 h-8 rounded-full border-2 border-white object-cover">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=40&h=40&fit=crop" alt="" class="w-8 h-8 rounded-full border-2 border-white object-cover">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=40&h=40&fit=crop" alt="" class="w-8 h-8 rounded-full border-2 border-white object-cover">
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-content">
+              <div class="flex items-start justify-between mb-4">
+                <div>
+                  <h3 class="font-semibold text-lg text-slate-900">Design</h3>
+                  <p class="text-sm text-slate-600 mt-1">UI/UX & Graphics</p>
+                </div>
+                <span class="badge badge-warning">5 members</span>
+              </div>
+              <div class="flex -space-x-2 mt-4">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop" alt="" class="w-8 h-8 rounded-full border-2 border-white object-cover">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop" alt="" class="w-8 h-8 rounded-full border-2 border-white object-cover">
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-content">
+              <div class="flex items-start justify-between mb-4">
+                <div>
+                  <h3 class="font-semibold text-lg text-slate-900">Marketing</h3>
+                  <p class="text-sm text-slate-600 mt-1">Growth & Content</p>
+                </div>
+                <span class="badge badge-success">4 members</span>
+              </div>
+              <div class="flex -space-x-2 mt-4">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=40&h=40&fit=crop" alt="" class="w-8 h-8 rounded-full border-2 border-white object-cover">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop" alt="" class="w-8 h-8 rounded-full border-2 border-white object-cover">
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-content">
+              <div class="flex items-start justify-between mb-4">
+                <div>
+                  <h3 class="font-semibold text-lg text-slate-900">Operations</h3>
+                  <p class="text-sm text-slate-600 mt-1">Admin & Support</p>
+                </div>
+                <span class="badge badge-secondary">3 members</span>
+              </div>
+              <div class="flex -space-x-2 mt-4">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=40&h=40&fit=crop" alt="" class="w-8 h-8 rounded-full border-2 border-white object-cover">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=40&h=40&fit=crop" alt="" class="w-8 h-8 rounded-full border-2 border-white object-cover">
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-content">
+              <div class="flex items-start justify-between mb-4">
+                <div>
+                  <h3 class="font-semibold text-lg text-slate-900">Product</h3>
+                  <p class="text-sm text-slate-600 mt-1">Strategy & Analytics</p>
+                </div>
+                <span class="badge badge-primary">4 members</span>
+              </div>
+              <div class="flex -space-x-2 mt-4">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop" alt="" class="w-8 h-8 rounded-full border-2 border-white object-cover">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop" alt="" class="w-8 h-8 rounded-full border-2 border-white object-cover">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Invite Modal -->
+  <div id="invite-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Invite Team Member</h2>
+        <button class="modal-close" onclick="document.getElementById('invite-modal').classList.remove('show')">×</button>
+      </div>
+      <form onsubmit="event.preventDefault(); alert('Invitation sent!'); document.getElementById('invite-modal').classList.remove('show');">
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" class="input" placeholder="name@example.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Role</label>
+          <select class="input">
+            <option>Developer</option>
+            <option>Designer</option>
+            <option>Project Manager</option>
+            <option>Product Owner</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Team</label>
+          <select class="input">
+            <option>Engineering</option>
+            <option>Design</option>
+            <option>Marketing</option>
+            <option>Operations</option>
+          </select>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="document.getElementById('invite-modal').classList.remove('show')">Cancel</button>
+          <button type="submit" class="btn btn-primary">Send Invitation</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    document.addEventListener('click', function(event) {
+      if (!event.target.closest('.dropdown')) {
+        document.querySelectorAll('.dropdown-content.show').forEach(el => {
+          el.classList.remove('show');
+        });
+      }
+    });
+
+    // Close modal when clicking outside
+    window.addEventListener('click', function(event) {
+      const modal = document.getElementById('invite-modal');
+      if (event.target === modal) {
+        modal.classList.remove('show');
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const currentPage = window.location.pathname.split('/').pop() || 'team.html';
+      document.querySelectorAll('a.nav-link').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage) {
+          link.classList.add('bg-blue-50', 'text-blue-700');
+          link.classList.remove('text-slate-900');
+        }
+      });
+    });
+  </script>
+  <pointer-feedback></pointer-feedback>
+</body>
+</html>
