@@ -70,7 +70,7 @@
           <div>
             <div class="flex items-center gap-3">
               <svg class="w-10 h-10 text-blue-600" data-lucide="layout-dashboard" stroke="currentColor" stroke-width="2" fill="none"></svg>
-              <h1 class="text-4xl font-bold text-blue-600">Dashboard</h1>
+              <h1 class="text-4xl font-bold dashboard-heading">Dashboard</h1>
             </div>
             <p class="text-slate-600 text-base mt-1">Welcome back! Here's what's happening with your projects.</p>
           </div>
@@ -134,7 +134,7 @@
             <div class="card-content">
               <div>
                 <p class="text-slate-700 text-base font-semibold">Team Members</p>
-                <p class="text-4xl font-bold mt-3 text-slate-900">24</p>
+                <p class="text-4xl font-bold mt-3 text-slate-900">40</p>
                 <p class="text-blue-700 text-base font-medium mt-3">+3 invited</p>
               </div>
             </div>
@@ -157,7 +157,7 @@
             <div class="card">
               <div class="card-header flex items-center justify-between">
                 <h2 class="card-title">Recent Tasks</h2>
-                <button class="btn btn-primary btn-sm">New Task</button>
+                <button class="btn btn-primary btn-sm" onclick="openNewTaskModal()">New Task</button>
               </div>
               <div class="card-content">
                 <div class="space-y-4">
@@ -539,6 +539,98 @@
         }
       });
     });
+
+    // New Task Modal Functions
+    function openNewTaskModal() {
+      document.getElementById('newTaskModal').classList.remove('hidden');
+      document.getElementById('newTaskModal').classList.add('flex');
+    }
+
+    function closeNewTaskModal() {
+      document.getElementById('newTaskModal').classList.add('hidden');
+      document.getElementById('newTaskModal').classList.remove('flex');
+    }
+
+    function createNewTask() {
+      const taskName = document.getElementById('taskName').value;
+      const taskDesc = document.getElementById('taskDesc').value;
+      const taskDue = document.getElementById('taskDue').value;
+
+      if (!taskName.trim()) {
+        alert('Please enter a task name');
+        return;
+      }
+
+      // Create new task HTML
+      const taskHTML = `
+        <div class="flex items-center gap-4 p-4 hover:bg-slate-50 rounded-lg cursor-pointer transition-colors border-2 border-slate-100">
+          <input type="checkbox" class="checkbox">
+          <div class="flex-1">
+            <p class="font-semibold text-base text-slate-900">${taskName}</p>
+            <p class="text-base text-slate-600 mt-1">${taskDesc ? taskDesc : 'No description'} • ${taskDue ? 'Due: ' + taskDue : 'No due date'}</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="badge badge-primary">Planned</span>
+            <img src="https://ui-avatars.com/api/?name=User&background=2563eb&color=fff&size=32" alt="User" class="w-8 h-8 rounded-full border-2 border-white">
+          </div>
+        </div>
+      `;
+
+      // Add to task list
+      const taskList = document.querySelector('.card-content .space-y-4');
+      taskList.insertAdjacentHTML('beforeend', taskHTML);
+
+      // Clear form and close modal
+      document.getElementById('taskName').value = '';
+      document.getElementById('taskDesc').value = '';
+      document.getElementById('taskDue').value = '';
+      closeNewTaskModal();
+    }
+
+    // Close modal when clicking outside
+    document.addEventListener('click', function(event) {
+      const modal = document.getElementById('newTaskModal');
+      if (event.target === modal) {
+        closeNewTaskModal();
+      }
+    });
   </script>
+
+  <!-- New Task Modal -->
+  <div id="newTaskModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-white rounded-lg shadow-xl p-8 w-full max-w-md">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-bold text-slate-900">Create New Task</h2>
+        <button onclick="closeNewTaskModal()" class="text-slate-400 hover:text-slate-600">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <div class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-2">Task Name *</label>
+          <input type="text" id="taskName" placeholder="Enter task name" class="input w-full border border-slate-300 rounded-lg px-4 py-2 text-slate-900 focus:outline-none focus:border-blue-500">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-2">Description</label>
+          <textarea id="taskDesc" placeholder="Enter task description" class="input w-full border border-slate-300 rounded-lg px-4 py-2 text-slate-900 focus:outline-none focus:border-blue-500 resize-none" rows="3"></textarea>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-2">Due Date</label>
+          <input type="date" id="taskDue" class="input w-full border border-slate-300 rounded-lg px-4 py-2 text-slate-900 focus:outline-none focus:border-blue-500">
+        </div>
+
+        <div class="flex gap-3 mt-6">
+          <button onclick="createNewTask()" class="btn btn-primary flex-1">Create Task</button>
+          <button onclick="closeNewTaskModal()" class="btn btn-secondary flex-1">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
