@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Cases Documentation - ProjectHub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+  <!-- Sidebar + Main Layout -->
+  <div class="flex h-screen">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white border-r border-slate-200 flex flex-col">
+      <!-- Logo -->
+      <div class="px-6 py-6 border-b border-slate-200">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-white" data-lucide="layout-dashboard" stroke="currentColor" stroke-width="2" fill="none"></svg>
+          </div>
+          <span class="font-bold text-lg">ProjectHub</span>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="flex-1 px-4 py-6 space-y-2">
+        <a href="dashboard.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-md text-slate-900 font-medium text-base hover:bg-slate-100 transition-colors">
+          <svg class="w-5 h-5" data-lucide="layout-dashboard" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></svg>
+          Dashboard
+        </a>
+        <a href="tasks.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-md text-slate-900 font-medium text-base hover:bg-slate-100 transition-colors">
+          <svg class="w-5 h-5" data-lucide="check-square" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></svg>
+          Tasks
+        </a>
+        <a href="team.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-md text-slate-900 font-medium text-base hover:bg-slate-100 transition-colors">
+          <svg class="w-5 h-5" data-lucide="users" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></svg>
+          Team
+        </a>
+        <a href="test-cases.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-md bg-blue-50 text-blue-700 font-semibold text-base hover:bg-blue-100 transition-colors">
+          <svg class="w-5 h-5" data-lucide="clipboard-list" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></svg>
+          Test Cases
+        </a>
+        <a href="settings.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-md text-slate-900 font-medium text-base hover:bg-slate-100 transition-colors">
+          <svg class="w-5 h-5" data-lucide="settings" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></svg>
+          Settings
+        </a>
+        <a href="analytics.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-md text-slate-900 font-medium text-base hover:bg-slate-100 transition-colors">
+          <svg class="w-5 h-5" data-lucide="bar-chart-3" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></svg>
+          Analytics
+        </a>
+      </nav>
+
+      <!-- User Profile -->
+      <div class="px-4 py-4 border-t border-slate-200">
+        <div class="flex items-center gap-3 p-3 rounded-md hover:bg-slate-100 cursor-pointer transition-colors">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop" alt="John Doe" class="w-10 h-10 rounded-full object-cover">
+          <div class="flex-1 min-w-0">
+            <p class="font-semibold text-sm truncate text-slate-900">John Doe</p>
+            <p class="text-xs text-slate-600 truncate">john@example.com</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 overflow-auto">
+      <!-- Header -->
+      <header class="bg-white border-b border-slate-200 sticky top-0 z-10">
+        <div class="px-8 py-6 flex items-center justify-between">
+          <div>
+            <div class="flex items-center gap-3">
+              <svg class="w-10 h-10 text-blue-600" data-lucide="clipboard-list" stroke="currentColor" stroke-width="2" fill="none"></svg>
+              <h1 class="text-4xl font-bold dashboard-heading">Test Cases</h1>
+            </div>
+            <p class="text-slate-600 text-base mt-1">Comprehensive test documentation and reference guide for QA testers.</p>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <div class="p-8">
+        <!-- Summary Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div class="card relative">
+            <div class="absolute top-4 right-4 opacity-30">
+              <svg class="w-12 h-12 text-slate-400" data-lucide="check-circle" stroke="currentColor" stroke-width="2" fill="none"></svg>
+            </div>
+            <div class="card-content">
+              <div>
+                <p class="text-slate-700 text-base font-semibold">Total Test Cases</p>
+                <p class="text-4xl font-bold mt-3 text-slate-900">45</p>
+                <p class="text-green-700 text-base font-medium mt-3">100% documented</p>
+              </div>
+            </div>
+          </div>
+          <div class="card relative">
+            <div class="absolute top-4 right-4 opacity-30">
+              <svg class="w-12 h-12 text-slate-400" data-lucide="zap" stroke="currentColor" stroke-width="2" fill="none"></svg>
+            </div>
+            <div class="card-content">
+              <div>
+                <p class="text-slate-700 text-base font-semibold">Critical Cases</p>
+                <p class="text-4xl font-bold mt-3 text-slate-900">8</p>
+                <p class="text-red-700 text-base font-medium mt-3">High priority</p>
+              </div>
+            </div>
+          </div>
+          <div class="card relative">
+            <div class="absolute top-4 right-4 opacity-30">
+              <svg class="w-12 h-12 text-slate-400" data-lucide="shield" stroke="currentColor" stroke-width="2" fill="none"></svg>
+            </div>
+            <div class="card-content">
+              <div>
+                <p class="text-slate-700 text-base font-semibold">Coverage</p>
+                <p class="text-4xl font-bold mt-3 text-slate-900">92%</p>
+                <p class="text-blue-700 text-base font-medium mt-3">All features tested</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Test Categories -->
+        <div class="grid grid-cols-1 gap-8">
+          <!-- Dashboard Tests -->
+          <div class="card">
+            <div class="card-header">
+              <h2 class="card-title">Dashboard Functionality Tests</h2>
+            </div>
+            <div class="card-content space-y-4">
+              <div class="border-l-4 border-blue-500 pl-4 py-2">
+                <h3 class="font-semibold text-lg text-slate-900">TC-001: Dashboard Page Load</h3>
+                <p class="text-slate-600 mt-1"><strong>Objective:</strong> Verify dashboard loads correctly with all components.</p>
+                <p class="text-slate-600 mt-2"><strong>Steps:</strong></p>
+                <ol class="list-decimal list-inside text-slate-600 mt-1 ml-2">
+                  <li>Navigate to dashboard.html</li>
+                  <li>Verify page loads without errors</li>
+                  <li>Check all sidebar navigation items display</li>
+                  <li>Verify header with title and search bar appear</li>
+                </ol>
+                <p class="text-slate-600 mt-2"><strong>Expected Result:</strong> Page loads successfully with all UI elements visible and responsive.</p>
+                <span class="inline-block mt-2 px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Pass</span>
+              </div>
+
+              <div class="border-l-4 border-blue-500 pl-4 py-2 mt-4">
+                <h3 class="font-semibold text-lg text-slate-900">TC-002: Stat Cards Display</h3>
+                <p class="text-slate-600 mt-1"><strong>Objective:</strong> Verify all stat cards display correct information with icons.</p>
+                <p class="text-slate-600 mt-2"><strong>Steps:</strong></p>
+                <ol class="list-decimal list-inside text-slate-600 mt-1 ml-2">
+                  <li>Load dashboard page</li>
+                  <li>Verify 4 stat cards are visible (Projects, Tasks, Team, Completion Rate)</li>
+                  <li>Check each card displays correct number values</li>
+                  <li>Verify icons appear with 30% opacity in top-right corner</li>
+                  <li>Verify sub-text shows relevant metrics</li>
+                </ol>
+                <p class="text-slate-600 mt-2"><strong>Expected Result:</strong> All stat cards display correctly with accurate values and icons.</p>
+                <span class="inline-block mt-2 px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Pass</span>
+              </div>
+
+              <div class="border-l-4 border-blue-500 pl-4 py-2 mt-4">
+                <h3 class="font-semibold text-lg text-slate-900">TC-003: Dashboard Heading Gradient</h3>
+                <p class="text-slate-600 mt-1"><strong>Objective:</strong> Verify dashboard heading displays with gradient color effect.</p>
+                <p class="text-slate-600 mt-2"><strong>Steps:</strong></p>
+                <ol class="list-decimal list-inside text-slate-600 mt-1 ml-2">
+                  <li>Load dashboard page</li>
+                  <li>Check main heading "Dashboard" displays with gradient</li>
+                  <li>Verify gradient uses blue-cyan-purple colors</li>
+                  <li>Check gradient is smooth and visible</li>
+                </ol>
+                <p class="text-slate-600 mt-2"><strong>Expected Result:</strong> Heading displays with smooth blue-cyan-purple gradient.</p>
+                <span class="inline-block mt-2 px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Pass</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Task Management Tests -->
+          <div class="card">
+            <div class="card-header">
+              <h2 class="card-title">Task Management Tests</h2>
+            </div>
+            <div class="card-content space-y-4">
+              <div class="border-l-4 border-amber-500 pl-4 py-2">
+                <h3 class="font-semibold text-lg text-slate-900">TC-004: Recent Tasks Display</h3>
+                <p class="text-slate-600 mt-1"><strong>Objective:</strong> Verify recent tasks are displayed with correct status.</p>
+                <p class="text-slate-600 mt-2"><strong>Steps:</strong></p>
+                <ol class="list-decimal list-inside text-slate-600 mt-1 ml-2">
+                  <li>Navigate to dashboard</li>
+                  <li>Locate "Recent Tasks" card</li>
+                  <li>Verify 4 tasks are listed with correct information</li>
+                  <li>Check status badges display correctly (In Progress, Completed, Overdue)</li>
+                  <li>Verify task descriptions and due dates appear</li>
+                </ol>
+                <p class="text-slate-600 mt-2"><strong>Expected Result:</strong> All tasks display with correct status, descriptions, and team member avatars.</p>
+                <span class="inline-block mt-2 px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Pass</span>
+              </div>
+
+              <div class="border-l-4 border-amber-500 pl-4 py-2 mt-4">
+                <h3 class="font-semibold text-lg text-slate-900">TC-005: New Task Modal</h3>
+                <p class="text-slate-600 mt-1"><strong>Objective:</strong> Verify new task creation modal functions correctly.</p>
+                <p class="text-slate-600 mt-2"><strong>Steps:</strong></p>
+                <ol class="list-decimal list-inside text-slate-600 mt-1 ml-2">
+                  <li>Click "New Task" button</li>
+                  <li>Verify modal opens with form fields</li>
+                  <li>Enter task name, description, and due date</li>
+                  <li>Click "Create Task"</li>
+                  <li>Verify new task appears in the task list</li>
+                </ol>
+                <p class="text-slate-600 mt-2"><strong>Expected Result:</strong> New task is created and added to the task list successfully.</p>
+                <span class="inline-block mt-2 px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Pass</span>
+              </div>
+
+              <div class="border-l-4 border-amber-500 pl-4 py-2 mt-4">
+                <h3 class="font-semibold text-lg text-slate-900">TC-006: Task Checkbox Interaction</h3>
+                <p class="text-slate-600 mt-1"><strong>Objective:</strong> Verify task completion checkboxes work correctly.</p>
+                <p class="text-slate-600 mt-2"><strong>Steps:</strong></p>
+                <ol class="list-decimal list-inside text-slate-600 mt-1 ml-2">
+                  <li>Click checkbox for uncompleted task</li>
+                  <li>Verify checkbox becomes checked</li>
+                  <li>Verify task text styling changes (e.g., strikethrough)</li>
+                  <li>Uncheck and verify it reverts</li>
+                </ol>
+                <p class="text-slate-600 mt-2"><strong>Expected Result:</strong> Checkboxes toggle correctly and update task visual state.</p>
+                <span class="inline-block mt-2 px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm font-medium">In Progress</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation & UI Tests -->
+          <div class="card">
+            <div class="card-header">
+              <h2 class="card-title">Navigation & UI Tests</h2>
+            </div>
+            <div class="card-content space-y-4">
+              <div class="border-l-4 border-purple-500 pl-4 py-2">
+                <h3 class="font-semibold text-lg text-slate-900">TC-007: Sidebar Navigation</h3>
+                <p class="text-slate-600 mt-1"><strong>Objective:</strong> Verify all navigation links work correctly.</p>
+                <p class="text-slate-600 mt-2"><strong>Steps:</strong></p>
+                <ol class="list-decimal list-inside text-slate-600 mt-1 ml-2">
+                  <li>Click each navigation item (Dashboard, Tasks, Team, Settings, Analytics)</li>
+                  <li>Verify page navigates to correct URL</li>
+                  <li>Verify active page is highlighted in sidebar</li>
+                  <li>Verify navigation icons display correctly</li>
+                </ol>
+                <p class="text-slate-600 mt-2"><strong>Expected Result:</strong> All navigation items are clickable and active states display correctly.</p>
+                <span class="inline-block mt-2 px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Pass</span>
+              </div>
+
+              <div class="border-l-4 border-purple-500 pl-4 py-2 mt-4">
+                <h3 class="font-semibold text-lg text-slate-900">TC-008: Dropdown Notifications</h3>
+                <p class="text-slate-600 mt-1"><strong>Objective:</strong> Verify notification dropdown functions correctly.</p>
+                <p class="text-slate-600 mt-2"><strong>Steps:</strong></p>
+                <ol class="list-decimal list-inside text-slate-600 mt-1 ml-2">
+                  <li>Click bell icon in header</li>
+                  <li>Verify dropdown menu opens</li>
+                  <li>Check notification items display</li>
+                  <li>Click outside dropdown to close</li>
+                  <li>Verify dropdown closes</li>
+                </ol>
+                <p class="text-slate-600 mt-2"><strong>Expected Result:</strong> Dropdown opens and closes correctly with smooth transitions.</p>
+                <span class="inline-block mt-2 px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Pass</span>
+              </div>
+
+              <div class="border-l-4 border-purple-500 pl-4 py-2 mt-4">
+                <h3 class="font-semibold text-lg text-slate-900">TC-009: Responsive Design</h3>
+                <p class="text-slate-600 mt-1"><strong>Objective:</strong> Verify page is responsive across different screen sizes.</p>
+                <p class="text-slate-600 mt-2"><strong>Steps:</strong></p>
+                <ol class="list-decimal list-inside text-slate-600 mt-1 ml-2">
+                  <li>Test at mobile (375px), tablet (768px), and desktop (1440px)</li>
+                  <li>Verify layout adapts properly to each breakpoint</li>
+                  <li>Check sidebar visibility on mobile</li>
+                  <li>Verify stat cards stack correctly on smaller screens</li>
+                </ol>
+                <p class="text-slate-600 mt-2"><strong>Expected Result:</strong> Page displays correctly and is fully usable at all screen sizes.</p>
+                <span class="inline-block mt-2 px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Pass</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Performance & Accessibility Tests -->
+          <div class="card">
+            <div class="card-header">
+              <h2 class="card-title">Performance & Accessibility Tests</h2>
+            </div>
+            <div class="card-content space-y-4">
+              <div class="border-l-4 border-indigo-500 pl-4 py-2">
+                <h3 class="font-semibold text-lg text-slate-900">TC-010: Page Load Performance</h3>
+                <p class="text-slate-600 mt-1"><strong>Objective:</strong> Verify page loads within acceptable time.</p>
+                <p class="text-slate-600 mt-2"><strong>Steps:</strong></p>
+                <ol class="list-decimal list-inside text-slate-600 mt-1 ml-2">
+                  <li>Open DevTools Performance tab</li>
+                  <li>Load dashboard page</li>
+                  <li>Check First Contentful Paint (FCP) &lt; 2s</li>
+                  <li>Check Largest Contentful Paint (LCP) &lt; 2.5s</li>
+                </ol>
+                <p class="text-slate-600 mt-2"><strong>Expected Result:</strong> Page loads with optimal performance metrics.</p>
+                <span class="inline-block mt-2 px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Pass</span>
+              </div>
+
+              <div class="border-l-4 border-indigo-500 pl-4 py-2 mt-4">
+                <h3 class="font-semibold text-lg text-slate-900">TC-011: Keyboard Navigation</h3>
+                <p class="text-slate-600 mt-1"><strong>Objective:</strong> Verify page is fully navigable via keyboard.</p>
+                <p class="text-slate-600 mt-2"><strong>Steps:</strong></p>
+                <ol class="list-decimal list-inside text-slate-600 mt-1 ml-2">
+                  <li>Tab through all interactive elements</li>
+                  <li>Verify focus indicators are visible</li>
+                  <li>Use Enter/Space to activate buttons</li>
+                  <li>Verify all functionality works without mouse</li>
+                </ol>
+                <p class="text-slate-600 mt-2"><strong>Expected Result:</strong> All page features are accessible via keyboard with clear focus states.</p>
+                <span class="inline-block mt-2 px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Pass</span>
+              </div>
+
+              <div class="border-l-4 border-indigo-500 pl-4 py-2 mt-4">
+                <h3 class="font-semibold text-lg text-slate-900">TC-012: Color Contrast</h3>
+                <p class="text-slate-600 mt-1"><strong>Objective:</strong> Verify text has sufficient color contrast for accessibility.</p>
+                <p class="text-slate-600 mt-2"><strong>Steps:</strong></p>
+                <ol class="list-decimal list-inside text-slate-600 mt-1 ml-2">
+                  <li>Use accessibility checker tool</li>
+                  <li>Check all text meets WCAG AA standard (4.5:1)</li>
+                  <li>Verify gradient text is readable</li>
+                  <li>Check in both light and dark contexts</li>
+                </ol>
+                <p class="text-slate-600 mt-2"><strong>Expected Result:</strong> All text meets or exceeds WCAG AA contrast requirements.</p>
+                <span class="inline-block mt-2 px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Pass</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Test Execution Summary -->
+        <div class="mt-8 card">
+          <div class="card-header">
+            <h2 class="card-title">Test Execution Summary</h2>
+          </div>
+          <div class="card-content">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between p-4 bg-slate-50 rounded-lg">
+                <span class="font-medium">Total Test Cases</span>
+                <span class="text-2xl font-bold text-slate-900">12</span>
+              </div>
+              <div class="flex items-center justify-between p-4 bg-green-50 rounded-lg">
+                <span class="font-medium text-green-900">Passed</span>
+                <span class="text-2xl font-bold text-green-600">10</span>
+              </div>
+              <div class="flex items-center justify-between p-4 bg-amber-50 rounded-lg">
+                <span class="font-medium text-amber-900">In Progress</span>
+                <span class="text-2xl font-bold text-amber-600">1</span>
+              </div>
+              <div class="flex items-center justify-between p-4 bg-red-50 rounded-lg">
+                <span class="font-medium text-red-900">Failed</span>
+                <span class="text-2xl font-bold text-red-600">1</span>
+              </div>
+              <div class="flex items-center justify-between p-4 bg-slate-100 rounded-lg mt-4">
+                <span class="font-semibold">Success Rate</span>
+                <span class="text-2xl font-bold text-blue-600">83%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    // Set active navigation item
+    document.addEventListener('DOMContentLoaded', function() {
+      const currentPage = window.location.pathname.split('/').pop() || 'test-cases.html';
+      document.querySelectorAll('a.nav-link').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage) {
+          link.classList.add('bg-blue-50', 'text-blue-700');
+          link.classList.remove('text-slate-900');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
