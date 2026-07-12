@@ -1180,7 +1180,7 @@ body {
 
 /* Dashboard Heading Gradient */
 .dashboard-heading {
-  background: linear-gradient(135deg, #2563eb 0%, #0284c7 50%, #7c3aed 100%) !important;
+  background: linear-gradient(135deg, #7c3aed 0%, #f97316 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
